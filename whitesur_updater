@@ -1,0 +1,18 @@
+#!/bin/bash
+user="$(whoami)"
+echo 'Program will update and install Whitesur gtk theme and icons'
+echo '#####################################'
+echo 'Updating and installing gtk theme'
+echo '#####################################'
+cd /home/$user/Repozytoria/WhiteSur-gtk-theme
+git pull
+sudo ./install.sh -c light -c dark -t all -i ubuntu -d /usr/share/themes
+echo '#####################################'
+echo 'Updating and installing icon theme'
+echo '#####################################'
+cd /home/$user/Repozytoria/WhiteSur-icon-theme
+git pull
+sudo ./install.sh -d /usr/share/icons
+echo '#####################################'
+echo 'Finished'
+echo '#####################################'
